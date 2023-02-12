@@ -6,7 +6,7 @@
  * WC requires at least: 3.0
  * WC tested up to: 5.2
  * Author:            TungPG
- * Text Domain:       infipay-multi-stripe-payment-gateway
+ * Text Domain:       infipay-multi-stripe-checkout-payment-gateway
  * Domain Path: /languages
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
@@ -22,12 +22,12 @@ if(wpruby_stripe_payment_is_woocommerce_active()){
 
 	add_action('plugins_loaded', 'init_multi_stripe_payment_gateway');
 	function init_multi_stripe_payment_gateway(){
-		require 'class-infipay-multi-stripe-payment-gateway.php';
+		require 'class-infipay-multi-stripe-checkout-payment-gateway.php';
 	}
 
 	add_action( 'plugins_loaded', 'multi_stripe_payment_load_plugin_textdomain' );
 	function multi_stripe_payment_load_plugin_textdomain() {
-	  load_plugin_textdomain( 'infipay-multi-stripe-payment-gateway', FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
+	  load_plugin_textdomain( 'infipay-multi-stripe-checkout-payment-gateway', FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
 	}
 
 
