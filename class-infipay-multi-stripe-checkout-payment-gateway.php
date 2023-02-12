@@ -203,7 +203,7 @@ class WC_Multi_Stripe_Checkout_Payment_Gateway extends WC_Payment_Gateway{
 		if(isset($result_object->error)){
 		    $error_message = $result_object->error;
 		    if(empty($result_object->show_error_to_buyer)){
-		        $error_message = "Sorry, an error occurred while trying to process your payment. Please try again.";
+		        $error_message = "Sorry, an error occurred while trying to process your payment. Please try again. (1)";
 		    }
 		    
 		    error_log($error_message);
@@ -245,7 +245,7 @@ class WC_Multi_Stripe_Checkout_Payment_Gateway extends WC_Payment_Gateway{
 		if(isset($result_object->error)){
 		    $error_message = $result_object->error;
 		    if(empty($result_object->show_error_to_buyer)){
-		        $error_message = "Sorry, an error occurred while trying to process your payment. Please try again.";
+		        $error_message = "Sorry, an error occurred while trying to process your payment. Please try again. (2)";
 		    }
 		    
 		    error_log($error_message);
@@ -257,7 +257,7 @@ class WC_Multi_Stripe_Checkout_Payment_Gateway extends WC_Payment_Gateway{
 		
 		if(!isset($result_object->session_id)){
 		    error_log("Could create Stripe checkout session!");
-		    wc_add_notice( __( "Sorry, an error occurred while trying to process your payment. Please try again.", 'infipay-multi-stripe-checkout-payment-gateway' ), 'error' );
+		    wc_add_notice( __( "Sorry, an error occurred while trying to process your payment. Please try again. (3)", 'infipay-multi-stripe-checkout-payment-gateway' ), 'error' );
 		    return array(
 		        'result'   => 'failure',
 		    );
