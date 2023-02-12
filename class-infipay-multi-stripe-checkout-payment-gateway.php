@@ -174,7 +174,7 @@ class WC_Multi_Stripe_Checkout_Payment_Gateway extends WC_Payment_Gateway{
 		}
 		
 		// Add note to order - tool name
-		$note = __("multi-stripe-checkout-payment-gateway");
+		$note = __("infipay-multi-stripe-checkout-payment-gateway");
 		$order->add_order_note( $note );
 		
 		// Get buyer ip address
