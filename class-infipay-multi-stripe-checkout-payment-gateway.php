@@ -239,9 +239,9 @@ class WC_Multi_Stripe_Checkout_Payment_Gateway extends WC_Payment_Gateway{
 		);
 		$context  = stream_context_create($options);
 		$api_response = file_get_contents($stripe_shop_payment_request_url, false, $context);
-		
+		echo $api_response;
 		$result_object = (object)json_decode( $api_response, true );
-		
+		print_r($result_object);
 		if(isset($result_object->error)){
 		    $error_message = $result_object->error;
 		    if(empty($result_object->show_error_to_buyer)){
