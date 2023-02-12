@@ -258,8 +258,6 @@ class WC_Multi_Stripe_Checkout_Payment_Gateway extends WC_Payment_Gateway{
 		if(!isset($result_object->session_id)){
 		    error_log("Could create Stripe checkout session!");
 		    wc_add_notice( __( "Sorry, an error occurred while trying to process your payment. Please try again. (3)", 'infipay-multi-stripe-checkout-payment-gateway' ), 'error' );
-		    wc_add_notice( __( $api_response, 'infipay-multi-stripe-checkout-payment-gateway' ), 'error' );
-		    wc_add_notice( __( print_r($result_object), 'infipay-multi-stripe-checkout-payment-gateway' ), 'error' );
 		    return array(
 		        'result'   => 'failure',
 		    );
