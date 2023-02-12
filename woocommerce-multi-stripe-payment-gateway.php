@@ -2,7 +2,7 @@
 /* @wordpress-plugin
  * Plugin Name:       WooCommerce Multi Stripe Payment Gateway
  * Description:       The plugin allows the use of multiple Stripe accounts in the same shop.
- * Version:           0.1.1
+ * Version:           1.0.0
  * WC requires at least: 3.0
  * WC tested up to: 5.2
  * Author:            TungPG
