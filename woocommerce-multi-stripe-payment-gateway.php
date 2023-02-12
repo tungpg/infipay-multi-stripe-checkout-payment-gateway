@@ -14,19 +14,19 @@
 
 $active_plugins = apply_filters('active_plugins', get_option('active_plugins'));
 if(wpruby_stripe_payment_is_woocommerce_active()){
-	add_filter('woocommerce_payment_gateways', 'add_multi_stripe_payment_gateway');
-	function add_multi_stripe_payment_gateway( $gateways ){
-		$gateways[] = 'WC_Multi_Stripe_Payment_Gateway';
+	add_filter('woocommerce_payment_gateways', 'add_multi_stripe_checkout_payment_gateway');
+	function add_multi_stripe_checkout_payment_gateway( $gateways ){
+		$gateways[] = 'WC_Multi_Stripe_Checkout_Payment_Gateway';
 		return $gateways; 
 	}
 
-	add_action('plugins_loaded', 'init_multi_stripe_payment_gateway');
-	function init_multi_stripe_payment_gateway(){
+	add_action('plugins_loaded', 'init_multi_stripe_checkout_payment_gateway');
+	function init_multi_stripe_checkout_payment_gateway(){
 		require 'class-infipay-multi-stripe-checkout-payment-gateway.php';
 	}
 
-	add_action( 'plugins_loaded', 'multi_stripe_payment_load_plugin_textdomain' );
-	function multi_stripe_payment_load_plugin_textdomain() {
+	add_action( 'plugins_loaded', 'multi_stripe_checkout_payment_load_plugin_textdomain' );
+	function multi_stripe_checkout_payment_load_plugin_textdomain() {
 	  load_plugin_textdomain( 'infipay-multi-stripe-checkout-payment-gateway', FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
 	}
 
